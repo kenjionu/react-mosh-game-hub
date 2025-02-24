@@ -1,2 +1,2 @@
-export * from './GameGrid/GameGrid';
-export * from './ColorModeSwitch/ColorModeSwitch'; 
+export * from './GameGrid/GameGrid.tsx';
+export * from './ColorModeSwitch/ColorModeSwitch.tsx'; 
