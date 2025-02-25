@@ -10,12 +10,12 @@ const ColorModeSwitch = () => {
         checked={colorMode === 'dark'}
         onCheckedChange={toggleColorMode}
         >
-      <Switch.HiddenInput />
-      <Switch.Control>
+        <Switch.HiddenInput />
+        <Switch.Control>
         <Switch.Thumb/>
-      </Switch.Control>
-      <Switch.Label>Dark Mode</Switch.Label>
-    </Switch.Root>
+        </Switch.Control>
+        <Switch.Label>Dark Mode</Switch.Label>
+      </Switch.Root>
     </HStack>
   )
 }
