@@ -12,9 +12,9 @@ function App() {
       lg: `"nav nav" "aside main"`
     }}>
         <GridItem area='nav' >
-        <Navbar />
+          <Navbar />
         </GridItem>
-        <GridItem area='aside' display={{ base: "none", lg: "block" }}>Aside</GridItem>
+        <GridItem area='aside' display={{ base: "none", lg: "block" }}></GridItem>
         <GridItem area='main'>
           <GameGrid />
         </GridItem>
