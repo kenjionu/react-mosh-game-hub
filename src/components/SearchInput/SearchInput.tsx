@@ -1,19 +1,27 @@
 import { HStack, Input } from '@chakra-ui/react'
-import React from 'react'
+import { useRef } from 'react'
 import { InputGroup } from '../ui/input-group'
-import { BsSearch } from 'react-icons/bs'
 
-const SearchInput = () => {
-  return (
-    <HStack gap={10} width="full">
-    <InputGroup width='100%'>
-        <Input borderRadius={20} placeholder='Search games...'
-    variant='flushed'></Input>
-    </InputGroup>
- 
-    </HStack>
-    
-  )
+interface Props {
+    onSearch: (searchText: string) => void;
+}
+
+const SearchInput = ({onSearch}: Props) => {
+    const ref = useRef<HTMLInputElement>(null)
+
+    return (
+        <form onSubmit={(event) => {
+            event.preventDefault();
+            if (ref.current) onSearch(ref.current.value)
+        }}>
+            <HStack gap={10} width="full">
+                <InputGroup width='100%'>
+                    <Input borderRadius={20} placeholder='Search games...'
+                        variant='flushed'></Input>
+                </InputGroup>
+            </HStack>
+        </form>
+    )
 }
 
 export default SearchInput
