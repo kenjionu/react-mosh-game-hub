@@ -12,11 +12,13 @@ const SearchInput = ({onSearch}: Props) => {
     return (
         <form onSubmit={(event) => {
             event.preventDefault();
-            if (ref.current) onSearch(ref.current.value)
+            if (ref.current) onSearch(ref.current.value);
         }}>
             <HStack gap={10} width="full">
                 <InputGroup width='100%'>
-                    <Input borderRadius={20} placeholder='Search games...'
+                    <Input
+                        ref={ref} 
+                        borderRadius={20} placeholder='Search games...'
                         variant='flushed'></Input>
                 </InputGroup>
             </HStack>
@@ -24,4 +26,4 @@ const SearchInput = ({onSearch}: Props) => {
     )
 }
 
-export default SearchInput
+export default SearchInput;
