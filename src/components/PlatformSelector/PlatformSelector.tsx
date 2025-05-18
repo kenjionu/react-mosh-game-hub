@@ -1,7 +1,6 @@
-import { Platform } from '@/hooks/useGames';
-import usePlatforms from '../../hooks/usePlatforms';
-import { Box, Button, MenuContent, MenuItem, MenuItemCommand, MenuRoot, MenuTrigger } from '@chakra-ui/react'
-import { LuArrowRightFromLine, LuChevronsRight, LuScissors } from 'react-icons/lu'
+import usePlatforms, { Platform} from '../../hooks/usePlatforms';
+import { Box, Button, MenuContent, MenuItem, MenuRoot, MenuTrigger } from '@chakra-ui/react'
+import { LuChevronsRight } from 'react-icons/lu'
 
 interface Props {
     onSelectPlatform: (platform: Platform) => void;
@@ -20,7 +19,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
                 </Button>
             </MenuTrigger>
             <MenuContent>
-                {data.map(platform => (
+                {data?.results.map(platform => (
                     <MenuItem
                     onClick={() => onSelectPlatform(platform)}
                     key={platform.id} value="cut" valueText="cut">
